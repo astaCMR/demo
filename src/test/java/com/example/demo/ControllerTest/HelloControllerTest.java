@@ -23,4 +23,9 @@ public class HelloControllerTest {
     public void hello() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk()).andExpect(content().string(equalTo("Greetings from Spring Boot!")));
     }
+
+    @Test
+    public void hello2() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/index").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk()).andExpect(content().string(equalTo("This is another path!!")));
+    }
 }
